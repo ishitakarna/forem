@@ -12,7 +12,9 @@ const publicReactionIcons = Object.keys(yamlData)
   )
   .map((slug) => {
     const { name, icon, position } = yamlData[slug];
-
+    const jsonObject = {};
+    jsonObject[slug] = yamlData[slug];
+    console.log("[CTEST] ####", JSON.stringify(jsonObject), "####");
     return `<img data-name="${name}" data-position="${position}" data-slug="${slug}" src="/assets/${icon}.svg" width="18" height="18" />`;
   })
   .join('');

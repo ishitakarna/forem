@@ -7,6 +7,8 @@ const locale = './config/locales/en.yml';
 const data = fs.readFileSync(locale, 'utf8');
 const yamlData = yaml.load(data);
 
+console.log("[CTEST] ####", JSON.stringify(yamlData), "####");
+
 document.body.innerHTML += `<div id="i18n-translations"></div>`;
 document.getElementById('i18n-translations').dataset.translations =
   JSON.stringify(yamlData);
